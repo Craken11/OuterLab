@@ -1,0 +1,292 @@
+:root {
+    --backgroundGradient: linear-gradient(to right, #574AE2, #222A68), linear-gradient(to left, #654597);
+    --mainBorderThickness: 10px solid;
+    --bannerBorder: 2px solid #000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background: var(--backgroundGradient);
+    letter-spacing: 1.5px;
+}
+
+a {
+    text-decoration: none;
+    color: #f0f0f0;
+
+    &:hover {
+        font-weight: bold;
+    }
+}
+
+section {
+    margin-block-end: 3em;
+}
+
+main {
+    h1 {
+        font-family: Oswald, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+        padding: 20px;
+        background-color: #222A68;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+    }
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    color: #242323;
+    padding: 20px;
+    margin: 20px auto;
+    /* max-width: cover; */
+
+    div {
+        .phone1 { /* nth child could posibly be used here */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 500px;
+
+            &:hover {
+                transform: scale(1.05);
+                transition: transform 0.3s ease-in-out;
+                box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+            }
+        }
+
+        .phone2 { /* nth child could posibly be used here */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 500px;
+            float: right;
+
+            &:hover {
+                transform: scale(1.05);
+                transition: transform 0.3s ease-in-out;
+                box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+            }
+        }
+    }
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url("../Images/Spacial Background.png");
+    border-block: var(--mainBorderThickness) #000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #f0f0f0;
+    border: var(--bannerBorder);
+
+    header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .outerTitleandSlogan {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1,
+        h2 {
+            margin-block: 0;
+            letter-spacing: 2px;
+        }
+
+        a {
+            img.outerLogo {
+                inline-size: 100px;
+                margin-top: 5px;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    nav {
+        ul {
+            display: flex;
+            gap: 24px;
+            padding-inline-start: 0;
+            padding-inline-end: 24px;
+            margin-block: 12px;
+            list-style-type: none;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    background-color: #222A68;
+    color: #f0f0f0;
+    padding: 20px;
+
+    &>div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline-end: 300px;
+    }
+
+    address {
+        text-align: right;
+    }
+
+    nav {
+        text-align: left;
+
+        ul {
+            list-style-type: none;
+            padding-inline-start: 300px;
+            margin-block: 0;
+
+            a {
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    &>div {
+        flex-direction: column;
+        gap: 16px;
+        padding-block: 16px;
+    }
+
+    nav,
+    address {
+        text-align: left;
+        padding-inline-start: 100px;
+
+    }
+
+    .banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        nav {
+            inline-size: 55vi;
+            ul {
+            flex-direction: column;
+            gap: 8px;
+            text-align: center;
+        }
+        }
+
+        header {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            .outerTitleandSlogan {
+                align-items: center;
+            }
+        }
+    }
+    
+
+    footer {
+        nav {
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                padding-inline-start: 0;
+            }
+        }
+    }
+}
+
+    /* .pageLinks .threeLineOption {
+    float: right;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+} //Might be used useful in the future 
+ 
+
+/* .pageLinks .searchButton {
+    float: right;
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    position: relative;
+    top: 3px;
+}
+
+Might be used useful in the future */
+
+    /* body {
+    background-size: cover;
+    background: linear-gradient(to left, #574AE2, #222A68, #654597);
+}
+
+.pageLinks {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    font-size: 13px;
+    padding: 5px 10px 50px;
+    border-inline: 10px solid #000;
+    border-top: 10px solid #000;
+    border-bottom: 10px solid #000;
+    background-image: url("../Images/Spacial Background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-inline: 10px;
+    margin-inline-end: 10px;
+}
+
+.outerLogo {
+    width: 40px;
+    height: 40px;
+    margin-top: -10px;
+    margin-left: 20px;
+}
+
+.outerLogo img{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-left: -45px;
+    align-items: center;
+    padding: 5px 10px 15px;
+    position: relative;
+    top: 3px;
+}
+
+ul {
+    text-align: center;
+    margin-left: 10px;
+    float: left;
+    color: #f0f0f0;
+    padding: 5px 10px 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #f0f0f0;
+}
+
+.pageLinks .slogan {
+    font-weight: bold;
+    font-size: 20px;
+} */
